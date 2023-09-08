@@ -48,9 +48,6 @@ ExportedObj/
 *.VC.db
 
 
-*.controller
-*.anim
-*.meta
 *.bundle
 
 
