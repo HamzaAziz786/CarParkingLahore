@@ -2716,7 +2716,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &421013970
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2729,10 +2729,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &426242873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,7 +4822,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &586486335
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4833,10 +4835,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &586486336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5356,7 +5360,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &640734574
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5369,10 +5373,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &642610447
 GameObject:
   m_ObjectHideFlags: 0
@@ -11803,7 +11809,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1339998760
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11816,10 +11822,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1347027884
 GameObject:
   m_ObjectHideFlags: 0
@@ -12729,7 +12737,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1418001941
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12742,10 +12750,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1431512899
 GameObject:
   m_ObjectHideFlags: 0
@@ -16585,7 +16595,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1854473320
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16598,10 +16608,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1868990433
 GameObject:
   m_ObjectHideFlags: 0
@@ -19585,7 +19597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653533788982175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: removeads
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653533788982175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19788,7 +19812,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653533804547875}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 50k_coins
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653533804547875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19945,7 +19981,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1022653533825128235
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19958,10 +19994,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1022653533830662418
 GameObject:
   m_ObjectHideFlags: 0
@@ -21606,7 +21644,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1022653534172702958
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21619,10 +21657,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1022653534211978514
 GameObject:
   m_ObjectHideFlags: 0
@@ -22955,7 +22995,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1022653534383772044
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -22968,10 +23008,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1022653534389071715
 GameObject:
   m_ObjectHideFlags: 0
@@ -23988,7 +24030,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &1022653534631354324
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24001,10 +24043,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1022653534647672527
 GameObject:
   m_ObjectHideFlags: 0
@@ -24214,7 +24258,7 @@ MonoBehaviour:
   - {fileID: 2133539827}
 --- !u!95 &1022653534660978369
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24227,10 +24271,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1022653534743659295
 GameObject:
   m_ObjectHideFlags: 0
@@ -24655,7 +24701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653534790020354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: unlock_all_cars
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653534790020354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26078,7 +26136,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653535111397062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 50k_coins
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653535111397062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26933,7 +27003,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653535283831545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: unlock_all_cars
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653535283831545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27360,7 +27442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022653535380331696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 568642621}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: IAP
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: removeads
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022653535380331696
 MonoBehaviour:
   m_ObjectHideFlags: 0

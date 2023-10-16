@@ -95,7 +95,7 @@ public class MenuManager : MonoBehaviour
     public void MoreGames()
     {
         BtnClickSound();
-        Application.OpenURL("https://play.google.com/work/apps/developer?id=Parking+Games+Arena");
+        Application.OpenURL("https://play.google.com/store/apps/developer?id=Parking+Games+Arena");
     }
 
     public void BackBtnFun()
@@ -181,7 +181,11 @@ public class MenuManager : MonoBehaviour
 
     }
 
-   
+   public void IAP(string str)
+    {
+        BtnClickSound();
+        Purchaser.instance.BuyProduct(str);
+    }
 
     public void OnStorePlayBtnClick()
     {

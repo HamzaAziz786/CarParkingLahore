@@ -36,6 +36,7 @@ public class GamePlay_Manager : MonoBehaviour
     public Text FailTimeTxt, CompTimeTxt;
     public AudioSource nice_job;
     public RCC_Camera cam;
+    public GameObject[] StartPoint;
     private void Start()
     {
         Instance = this;
@@ -88,7 +89,7 @@ public class GamePlay_Manager : MonoBehaviour
         num++;
         LevelNoTxt.text = "LEVEL " + num;
         FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-
+        Players[0].transform.position = StartPoint[num].transform.position;
         AdsManager.Instance.ShowBannerAd();
         AdsManager.Instance.HideRectBannerAd();
     }
