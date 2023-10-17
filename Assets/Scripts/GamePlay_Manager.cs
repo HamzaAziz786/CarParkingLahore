@@ -89,7 +89,7 @@ public class GamePlay_Manager : MonoBehaviour
         num++;
         LevelNoTxt.text = "LEVEL " + num;
         FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-        Players[0].transform.position = StartPoint[num].transform.position;
+        //Players[0].transform.position = StartPoint[num].transform.position;
         AdsManager.Instance.ShowBannerAd();
         AdsManager.Instance.HideRectBannerAd();
     }
