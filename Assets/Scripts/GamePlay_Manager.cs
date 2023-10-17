@@ -51,18 +51,20 @@ public class GamePlay_Manager : MonoBehaviour
         GamePlayPanel.SetActive(true);
 
         Levels[MenuManager.LevelNum].SetActive(true);
-        Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
+        player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x,player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
+        player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
+       Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
 
-        if(MenuManager.LevelNum == 0)
-        {
-            //GearToturial.SetActive(false);
-            //RaceToturial.SetActive(true);
-        }
-        else if (MenuManager.LevelNum == 2)
-        {
-            GearToturial.SetActive(true);
-            RaceToturial.SetActive(false);
-        }
+        //if(MenuManager.LevelNum == 0)
+        //{
+        //    //GearToturial.SetActive(false);
+        //    //RaceToturial.SetActive(true);
+        //}
+        //else if (MenuManager.LevelNum == 2)
+        //{
+        //    GearToturial.SetActive(true);
+        //    RaceToturial.SetActive(false);
+        //}
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
@@ -88,9 +90,9 @@ public class GamePlay_Manager : MonoBehaviour
 
         num = MenuManager.LevelNum;
         Debug.Log(num);
-        player.transform.Translate(new Vector3(StartPoint[num].transform.position.x , 0, 0));
-       
-        num++;
+
+        
+         num++;
         LevelNoTxt.text = "LEVEL " + num;
         FireBaseManager.Instance.LogEvent("level_" + num + "_start");
        
