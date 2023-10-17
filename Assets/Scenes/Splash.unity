@@ -368,7 +368,7 @@ MonoBehaviour:
   InterstitialLoadingID: ca-app-pub-7324216989805584/5118941296
   RewardedVideoAdID: ca-app-pub-7324216989805584/5837126593
   RectBannerAdID: ca-app-pub-7324216989805584/5081366552
-  IsShowTestAds: 1
+  IsShowTestAds: 0
   ShowDebugLogs: 0
   isRectBannerAdLoaded: 0
   isRewardedVideoAdLoaded: 0
