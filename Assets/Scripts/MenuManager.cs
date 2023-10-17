@@ -38,8 +38,8 @@ public class MenuManager : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        AdsManager.Instance.ShowBannerAd();
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.ShowBannerAd();
+       // AdsManager.Instance.HideRectBannerAd();
     }
 
 
@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour
         BtnClickSound();
         HidePanels();
         LevelPanel.SetActive(true);
-        AdsManager.Instance.ShowBannerAd();
+       // AdsManager.Instance.ShowBannerAd();
     }
     public void OnShopBtnClick()
     {
@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
         HidePanels();
         SettingsPanel.SetActive(true);
 
-        AdsManager.Instance.ShowRectBannerAd();
+        //AdsManager.Instance.ShowRectBannerAd();
     }
 
     public void RateUs()
@@ -121,7 +121,7 @@ public class MenuManager : MonoBehaviour
     {
         HidePanels();
         QuitPanel.SetActive(true);
-        AdsManager.Instance.ShowRectBannerAd();
+       // AdsManager.Instance.ShowRectBannerAd();
     }
 
     void BackFromLevelPanel()
@@ -135,7 +135,7 @@ public class MenuManager : MonoBehaviour
     {
         HidePanels();
         MainPanel.SetActive(true);
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.HideRectBannerAd();
     }
     void BackFromShop()
     {
@@ -152,7 +152,7 @@ public class MenuManager : MonoBehaviour
     {
         HidePanels();
         MainPanel.SetActive(true);
-        AdsManager.Instance.HideRectBannerAd();
+      //  AdsManager.Instance.HideRectBannerAd();
     }
 
 
@@ -193,7 +193,7 @@ public class MenuManager : MonoBehaviour
         HidePanels();
         LoadingPanel.SetActive(true);
         StartCoroutine(LoadYourAsyncScene());
-        AdsManager.Instance.ShowInterstitialLoading();
+       // AdsManager.Instance.ShowInterstitialLoading();
     }
     
     IEnumerator LoadYourAsyncScene()
@@ -225,7 +225,7 @@ public class MenuManager : MonoBehaviour
 
     public void WatchVideo()
     {
-        AdsManager.Instance.ShowRewardedVideoAd();
+      //  AdsManager.Instance.ShowRewardedVideoAd();
     }
    
 }

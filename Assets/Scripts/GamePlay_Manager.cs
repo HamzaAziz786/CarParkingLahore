@@ -94,10 +94,10 @@ public class GamePlay_Manager : MonoBehaviour
         
          num++;
         LevelNoTxt.text = "LEVEL " + num;
-        FireBaseManager.Instance.LogEvent("level_" + num + "_start");
+       // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
        
-        AdsManager.Instance.ShowBannerAd();
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.ShowBannerAd();
+        //AdsManager.Instance.HideRectBannerAd();
     }
     public void BtnClickSound()
     {
@@ -156,10 +156,10 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         FailPanel.SetActive(true);
         AudioListener.volume = 0;
-        FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
+       // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
 
-        AdsManager.Instance.ShowInterstitialLoading();
-        AdsManager.Instance.ShowRectBannerAd();
+        //AdsManager.Instance.ShowInterstitialLoading();
+        //AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnComplete()
     {
@@ -179,14 +179,14 @@ public class GamePlay_Manager : MonoBehaviour
             PlayerPrefs.SetInt("levels", PlayerPrefs.GetInt("levels") + 1);
         }
 
-        FireBaseManager.Instance.LogEvent("level_" + num + "_complete");
+        //FireBaseManager.Instance.LogEvent("level_" + num + "_complete");
     }
     public void OpenCompltPanel()
     {
         HidePanels();
         CompletePanel.SetActive(true);
-        AdsManager.Instance.ShowInterstitialLoading();
-        AdsManager.Instance.ShowRectBannerAd();
+        //AdsManager.Instance.ShowInterstitialLoading();
+        //AdsManager.Instance.ShowRectBannerAd();
     }
     public void Restart()
     {
@@ -195,7 +195,7 @@ public class GamePlay_Manager : MonoBehaviour
         loadingPanel.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         AudioListener.volume = 1f;
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.HideRectBannerAd();
     }
     public void OnHome()
     {
@@ -203,7 +203,7 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         loadingPanel.SetActive(true);
         SceneManager.LoadScene("MainMenu");
-        AdsManager.Instance.HideRectBannerAd();
+        //AdsManager.Instance.HideRectBannerAd();
     }
     public void OnLevels()
     {
@@ -212,7 +212,7 @@ public class GamePlay_Manager : MonoBehaviour
         loadingPanel.SetActive(true);
         MenuManager.IsNext = true;
         SceneManager.LoadScene("MainMenu");
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.HideRectBannerAd();
     }
     public void OnPause()
     {
@@ -221,8 +221,8 @@ public class GamePlay_Manager : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0;
         AudioListener.volume = 0;
-        AdsManager.Instance.ShowInterstitialLoading();
-        AdsManager.Instance.ShowRectBannerAd();
+       // AdsManager.Instance.ShowInterstitialLoading();
+       // AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnSetting()
     {
@@ -232,7 +232,7 @@ public class GamePlay_Manager : MonoBehaviour
         Time.timeScale = 0;
         //AudioListener.volume = 0;
        // AdsManager.Instance.ShowInterstitialLoading();
-        AdsManager.Instance.ShowRectBannerAd();
+       // AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnResume()
     {
@@ -249,7 +249,7 @@ public class GamePlay_Manager : MonoBehaviour
         {
             AudioListener.volume = 0;
         }
-        AdsManager.Instance.HideRectBannerAd();
+       // AdsManager.Instance.HideRectBannerAd();
     }
 
    
@@ -259,7 +259,7 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         loadingPanel.SetActive(true);
         StartCoroutine(NextPlz());
-        AdsManager.Instance.HideRectBannerAd();
+      //  AdsManager.Instance.HideRectBannerAd();
     }
     IEnumerator NextPlz()
     {

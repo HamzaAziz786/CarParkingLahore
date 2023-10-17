@@ -238,8 +238,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
 
             if (_Product == "removeads")
             {
-				PlayerPrefs.SetInt("" + AdsManager.Instance.removeAds_InAPPKey, 1);
-				AdsManager.Instance.HideBannerAd();
+				//PlayerPrefs.SetInt("" + AdsManager.Instance.removeAds_InAPPKey, 1);
+				//AdsManager.Instance.HideBannerAd();
             }
             if(_Product == "unlock_all_cars")
             {
