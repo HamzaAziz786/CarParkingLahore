@@ -37,6 +37,7 @@ public class GamePlay_Manager : MonoBehaviour
     public AudioSource nice_job;
     public RCC_Camera cam;
     public GameObject[] StartPoint;
+    public GameObject player;
     private void Start()
     {
         Instance = this;
@@ -86,10 +87,13 @@ public class GamePlay_Manager : MonoBehaviour
 
 
         num = MenuManager.LevelNum;
+        Debug.Log(num);
+        player.transform.Translate(new Vector3(StartPoint[num].transform.position.x , 0, 0));
+       
         num++;
         LevelNoTxt.text = "LEVEL " + num;
         FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-        Players[0].transform.position = StartPoint[num].transform.position;
+       
         AdsManager.Instance.ShowBannerAd();
         AdsManager.Instance.HideRectBannerAd();
     }
