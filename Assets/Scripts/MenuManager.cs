@@ -37,7 +37,7 @@ public class MenuManager : MonoBehaviour
        
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
+        AdsController.instance.ShowAd(AdType.BANNER,0);
        // AdsManager.Instance.ShowBannerAd();
        // AdsManager.Instance.HideRectBannerAd();
     }
@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour
         BtnClickSound();
         HidePanels();
         LevelPanel.SetActive(true);
-       // AdsManager.Instance.ShowBannerAd();
+        AdsController.instance.ShowAd(AdType.BANNER, 0);
     }
     public void OnShopBtnClick()
     {
