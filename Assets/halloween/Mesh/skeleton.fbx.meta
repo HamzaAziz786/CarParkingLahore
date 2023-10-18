@@ -78,7 +78,12 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: skeleton(Clone)
+      parentName: 
+      position: {x: 3.0120916, y: -0.0046512173, z: 2.8475194}
+      rotation: {x: -0.000000038636763, y: 0.19609784, z: -7.019495e-10, w: 0.9805844}
+      scale: {x: 0.4046657, y: 0.40466577, z: 0.4046657}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
