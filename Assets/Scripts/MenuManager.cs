@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    
     [Space(5)]
     public GameObject MainPanel;
     public GameObject LevelPanel;
@@ -53,7 +54,19 @@ public class MenuManager : MonoBehaviour
         QuitPanel.SetActive(false);
     }
 
-
+    public void ModeNumber(int ModeNumber)
+    {
+        if (ModeNumber == 0)
+        {
+            BtnClickSound();
+            SceneManager.LoadScene(2);
+        }
+        else if(ModeNumber==1)
+        {
+            BtnClickSound();
+            SceneManager.LoadScene(3);
+        }
+    }
 
     public void BtnClickSound()
     {
