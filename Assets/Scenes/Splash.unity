@@ -207,6 +207,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336675833}
+  - component: {fileID: 336675835}
+  - component: {fileID: 336675834}
   m_Layer: 0
   m_Name: Ads
   m_TagString: Untagged
@@ -228,6 +230,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336675834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336675832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69173fbf8cfd1ad49abefdd28724c181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testMode: 0
+  admobController: {fileID: 0}
+  isAdInitialized: 0
+  unityAdsID: 
+  interstitialPlacementID: 
+  URV_PlacementID: 
+  CountP: 0
+  CountM: 1
+  CountInter: 0
+  LoadingPanel: {fileID: 0}
+  onceAppOpen: 0
+  UnityAdLoaded: 0
+  UnityInter: 0
+--- !u!114 &336675835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336675832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394d670093bcddc4898e97eb4b857f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appID: 
+  bannerID: 
+  interstitialID: 
+  interstitialID_Floor: 
+  rewardedID: 
+  AppOpenID: 
+  banneryAdType: 5
+  bannerAdPosition: 0000000001000000
+  selectedAdPosition_Banner: 0
+  AdBreak: {fileID: 0}
 --- !u!1 &685353781
 GameObject:
   m_ObjectHideFlags: 0
