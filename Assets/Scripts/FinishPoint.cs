@@ -16,7 +16,7 @@ public class FinishPoint : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             GamePlay_Manager.Instance.BtnClickSource.PlayOneShot(GamePlay_Manager.Instance.victoryClip);
-
+            GamePlay_Manager.Instance.playerrb.isKinematic = true;
             IsFinish = true;
             RCC_SceneManager.Instance.activePlayerVehicle.brakeInput = 1;
             GamePlay_Manager.Instance.HidePanels();
