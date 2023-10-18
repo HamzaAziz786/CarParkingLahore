@@ -40,6 +40,7 @@ public class GamePlay_Manager : MonoBehaviour
     public GameObject player;
     public AudioSource SuddendlySounds;
     public AudioClip s1,s2,s3,s4,s5;
+    public Rigidbody playerrb;
     private void Start()
     {
         Instance = this;
@@ -60,7 +61,8 @@ public class GamePlay_Manager : MonoBehaviour
         }
         Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
         if (MenuManager.instance.modenumber == 3)
-            InvokeRepeating(nameof(SuddendlySound), .2f, 4);
+            Invoke(nameof(StartSound),1.5f);
+            
         //if(MenuManager.LevelNum == 0)
         //{
         //    //GearToturial.SetActive(false);
@@ -104,6 +106,10 @@ public class GamePlay_Manager : MonoBehaviour
 
         // AdsManager.Instance.ShowBannerAd();
         //AdsManager.Instance.HideRectBannerAd();
+    }
+    public void StartSound()
+    {
+        InvokeRepeating(nameof(SuddendlySound), .2f, 4);
     }
     public void SuddendlySound()
     {
@@ -189,7 +195,7 @@ public class GamePlay_Manager : MonoBehaviour
 
         HidePanels();
         nice_job.Play();
-
+        playerrb.isKinematic = true;
         Invoke("OpenCompltPanel", 2f);
 
         PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + 1000);
@@ -206,6 +212,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
         CompletePanel.SetActive(true);
+        
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }

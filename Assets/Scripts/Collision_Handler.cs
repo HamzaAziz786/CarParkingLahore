@@ -4,8 +4,13 @@ using UnityEngine;
 public class Collision_Handler : MonoBehaviour
 {
     public Material redTransparentMaterial;
+    public Rigidbody player;
     Material OriginalMat;
     Renderer render;
+    private void Start()
+    {
+        player.isKinematic = false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("Hurdle"))
@@ -13,8 +18,8 @@ public class Collision_Handler : MonoBehaviour
             GamePlay_Manager.Instance.BtnClickSource.PlayOneShot(GamePlay_Manager.Instance.AlarmClip);
             Vehicle_Lights.Instance.Indicator.enabled = true;
             Vehicle_Lights.Instance.brakeLights.enabled = true;
-
-            render = collision.gameObject.GetComponent<Renderer>();
+            player.isKinematic = true;
+              render = collision.gameObject.GetComponent<Renderer>();
             OriginalMat = render.material;
            
             //if(render != null)
