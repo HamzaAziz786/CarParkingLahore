@@ -184,7 +184,7 @@ public class MenuManager : MonoBehaviour
    public void IAP(string str)
     {
         BtnClickSound();
-        Purchaser.instance.BuyProduct(str);
+        ////Purchaser.instance.BuyProduct(str);
     }
 
     public void OnStorePlayBtnClick()
