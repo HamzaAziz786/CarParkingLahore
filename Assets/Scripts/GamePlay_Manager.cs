@@ -38,6 +38,8 @@ public class GamePlay_Manager : MonoBehaviour
     public RCC_Camera cam;
     public GameObject[] StartPoint;
     public GameObject player;
+    public AudioSource SuddendlySounds;
+    public AudioClip s1,s2,s3,s4,s5;
     private void Start()
     {
         Instance = this;
@@ -57,7 +59,8 @@ public class GamePlay_Manager : MonoBehaviour
             player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
         }
         Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
-
+        if (MenuManager.instance.modenumber == 3)
+            InvokeRepeating(nameof(SuddendlySound), .2f, 4);
         //if(MenuManager.LevelNum == 0)
         //{
         //    //GearToturial.SetActive(false);
@@ -101,6 +104,21 @@ public class GamePlay_Manager : MonoBehaviour
 
         // AdsManager.Instance.ShowBannerAd();
         //AdsManager.Instance.HideRectBannerAd();
+    }
+    public void SuddendlySound()
+    {
+
+        int a = Random.Range(0, 5);
+        if(a==0)
+            SuddendlySounds.PlayOneShot(s1);
+        else if (a == 1)
+            SuddendlySounds.PlayOneShot(s2);
+        else if (a == 2)
+            SuddendlySounds.PlayOneShot(s3);
+        else if (a == 3)
+            SuddendlySounds.PlayOneShot(s4);
+        else if (a == 4)
+            SuddendlySounds.PlayOneShot(s5);
     }
     public void BtnClickSound()
     {
