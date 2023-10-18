@@ -20,12 +20,12 @@ public class GamePlay_Manager : MonoBehaviour
     [Space]
     public GameObject ReverseCamImg;
     Camera ReverseCam;
-   
+
     public static GamePlay_Manager Instance;
     public GameObject Confetti;
     public Canvas MainCanvas;
     public AudioSource BtnClickSource;
-    public AudioClip BtnClip,victoryClip, AlarmClip;
+    public AudioClip BtnClip, victoryClip, AlarmClip;
     public Text LevelNoTxt;
     int num;
 
@@ -51,9 +51,12 @@ public class GamePlay_Manager : MonoBehaviour
         GamePlayPanel.SetActive(true);
 
         Levels[MenuManager.LevelNum].SetActive(true);
-        player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x,player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
-        player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
-       Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
+        if (MenuManager.instance.modenumber == 3)
+        {
+            player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x, player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
+            player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
+        }
+        Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
 
         //if(MenuManager.LevelNum == 0)
         //{
@@ -91,12 +94,12 @@ public class GamePlay_Manager : MonoBehaviour
         num = MenuManager.LevelNum;
         Debug.Log(num);
 
-        
-         num++;
+
+        num++;
         LevelNoTxt.text = "LEVEL " + num;
-       // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-       
-       // AdsManager.Instance.ShowBannerAd();
+        // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
+
+        // AdsManager.Instance.ShowBannerAd();
         //AdsManager.Instance.HideRectBannerAd();
     }
     public void BtnClickSound()
@@ -150,13 +153,13 @@ public class GamePlay_Manager : MonoBehaviour
         ReverseCam.enabled = false;
     }
 
-    public void OnFail( )
+    public void OnFail()
     {
         Time.timeScale = 0;
         HidePanels();
         FailPanel.SetActive(true);
         AudioListener.volume = 0;
-       // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
+        // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
 
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
@@ -165,7 +168,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         MainCanvas.renderMode = RenderMode.ScreenSpaceCamera;
 
-       
+
         HidePanels();
         nice_job.Play();
 
@@ -174,9 +177,9 @@ public class GamePlay_Manager : MonoBehaviour
         PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + 1000);
 
 
-        if (PlayerPrefs.GetInt("levels") < 29 && MenuManager.LevelNum == PlayerPrefs.GetInt("levels"))
+        if (PlayerPrefs.GetInt("levels"+MenuManager.instance.modenumber) < 29 && MenuManager.LevelNum == PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber))
         {
-            PlayerPrefs.SetInt("levels", PlayerPrefs.GetInt("levels") + 1);
+            PlayerPrefs.SetInt("levels"+MenuManager.instance.modenumber, PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) + 1);
         }
 
         //FireBaseManager.Instance.LogEvent("level_" + num + "_complete");
@@ -195,7 +198,7 @@ public class GamePlay_Manager : MonoBehaviour
         loadingPanel.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         AudioListener.volume = 1f;
-       // AdsManager.Instance.HideRectBannerAd();
+        // AdsManager.Instance.HideRectBannerAd();
     }
     public void OnHome()
     {
@@ -212,7 +215,7 @@ public class GamePlay_Manager : MonoBehaviour
         loadingPanel.SetActive(true);
         MenuManager.IsNext = true;
         SceneManager.LoadScene("MainMenu");
-       // AdsManager.Instance.HideRectBannerAd();
+        // AdsManager.Instance.HideRectBannerAd();
     }
     public void OnPause()
     {
@@ -221,8 +224,8 @@ public class GamePlay_Manager : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0;
         AudioListener.volume = 0;
-       // AdsManager.Instance.ShowInterstitialLoading();
-       // AdsManager.Instance.ShowRectBannerAd();
+        // AdsManager.Instance.ShowInterstitialLoading();
+        // AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnSetting()
     {
@@ -231,8 +234,8 @@ public class GamePlay_Manager : MonoBehaviour
         settingsPanel.SetActive(true);
         Time.timeScale = 0;
         //AudioListener.volume = 0;
-       // AdsManager.Instance.ShowInterstitialLoading();
-       // AdsManager.Instance.ShowRectBannerAd();
+        // AdsManager.Instance.ShowInterstitialLoading();
+        // AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnResume()
     {
@@ -240,7 +243,7 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         GamePlayPanel.SetActive(true);
         Time.timeScale = 1f;
-        
+
         if (PlayerPrefs.GetFloat("sound") > 0)
         {
             AudioListener.volume = 1f;
@@ -249,17 +252,17 @@ public class GamePlay_Manager : MonoBehaviour
         {
             AudioListener.volume = 0;
         }
-       // AdsManager.Instance.HideRectBannerAd();
+        // AdsManager.Instance.HideRectBannerAd();
     }
 
-   
+
     public void OnNext()
     {
         BtnClickSound();
         HidePanels();
         loadingPanel.SetActive(true);
         StartCoroutine(NextPlz());
-      //  AdsManager.Instance.HideRectBannerAd();
+        //  AdsManager.Instance.HideRectBannerAd();
     }
     IEnumerator NextPlz()
     {
@@ -267,15 +270,15 @@ public class GamePlay_Manager : MonoBehaviour
         if (MenuManager.LevelNum < 29)
         {
             MenuManager.LevelNum++;
-            
+
         }
         else
         {
             MenuManager.LevelNum = 0;
             //MenuManager.IsNext = true;
-           
+
         }
         Restart();
     }
-   
+
 }

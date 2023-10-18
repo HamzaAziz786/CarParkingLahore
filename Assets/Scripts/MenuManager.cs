@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
     public static int LevelNum;
     public Text[] CashTxt;
     public static MenuManager instance;
-   
+    public int modenumber;
     private void Start()
     {
         AudioListener.pause = false;
@@ -56,15 +56,16 @@ public class MenuManager : MonoBehaviour
 
     public void ModeNumber(int ModeNumber)
     {
+        modenumber = ModeNumber;
         if (ModeNumber == 0)
         {
             BtnClickSound();
-            SceneManager.LoadScene(2);
+           
         }
         else if(ModeNumber==1)
         {
             BtnClickSound();
-            SceneManager.LoadScene(3);
+            
         }
     }
 
@@ -129,7 +130,10 @@ public class MenuManager : MonoBehaviour
         else
             BackFromSettings();
     }
-
+    public void ClickSound()
+    {
+        BtnClickSound();
+    }
     void BackFromMainPanel()
     {
         HidePanels();
@@ -212,8 +216,8 @@ public class MenuManager : MonoBehaviour
     IEnumerator LoadYourAsyncScene()
     {
        
-            asyncLoad = SceneManager.LoadSceneAsync("GamePlay");
-       
+            asyncLoad = SceneManager.LoadSceneAsync(modenumber);/*SceneManager.LoadSceneAsync("GamePlay");*/
+
         while (!asyncLoad.isDone)
         {
             float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f);

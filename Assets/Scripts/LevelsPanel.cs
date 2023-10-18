@@ -92,21 +92,25 @@ public class
         foreach (GameObject obj in levels)
         {
             obj.GetComponent<Button>().interactable = false;
+
         }
         
-        levels[PlayerPrefs.GetInt("levels")].transform.GetChild(0).gameObject.SetActive(false);
-
+        levels[PlayerPrefs.GetInt("levels"+MenuManager.instance.modenumber)].transform.GetChild(0).gameObject.SetActive(false);
+        for (int i = 0; i <= PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber); i++)
+        {
+            lockedImg[i].SetActive(true);
+        }
         //ContentPosition();
     }
 
 
     void Update()
     {
-        for (int i = 0; i <= PlayerPrefs.GetInt("levels"); i++)
+        for (int i = 0; i <= PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber); i++)
         {
             levels[i].GetComponent<Button>().interactable = true;
         }
-        for (int i = 0; i <= PlayerPrefs.GetInt("levels"); i++)
+        for (int i = 0; i <= PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber); i++)
         {
             lockedImg[i].SetActive(false);
         }
