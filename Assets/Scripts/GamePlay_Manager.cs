@@ -103,7 +103,7 @@ public class GamePlay_Manager : MonoBehaviour
         num++;
         LevelNoTxt.text = "LEVEL " + num;
         // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-
+        AdsController.instance.ShowAd(AdType.BANNER,0);
         // AdsManager.Instance.ShowBannerAd();
         //AdsManager.Instance.HideRectBannerAd();
     }
@@ -184,7 +184,7 @@ public class GamePlay_Manager : MonoBehaviour
         FailPanel.SetActive(true);
         AudioListener.volume = 0;
         // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
-
+        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
@@ -212,7 +212,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
         CompletePanel.SetActive(true);
-        
+        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
@@ -231,6 +231,7 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         loadingPanel.SetActive(true);
         SceneManager.LoadScene("MainMenu");
+        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         //AdsManager.Instance.HideRectBannerAd();
     }
     public void OnLevels()
@@ -249,6 +250,7 @@ public class GamePlay_Manager : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0;
         AudioListener.volume = 0;
+        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         // AdsManager.Instance.ShowInterstitialLoading();
         // AdsManager.Instance.ShowRectBannerAd();
     }
