@@ -41,6 +41,7 @@ public class GamePlay_Manager : MonoBehaviour
     public AudioSource SuddendlySounds;
     public AudioClip s1,s2,s3,s4,s5;
     public Rigidbody playerrb;
+   
     private void Start()
     {
         Instance = this;
