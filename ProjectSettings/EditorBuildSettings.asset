@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlayScenes/Hallowean.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/GamePlayScenes/ParkingLevels.unity
+    path: Assets/Scenes/GamePlayScenes/CityMode.unity
     guid: 497cd523cbfe09c45bb59e112f1de371
+  - enabled: 1
+    path: Assets/Scenes/GamePlayScenes/SnowMode.unity
+    guid: cd47b05847ab31c45b1c6675ee3132da
   m_configObjects: {}

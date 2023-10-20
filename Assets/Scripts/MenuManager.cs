@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    public int[] ModeLevels_T;
     [Space(5)]
     public GameObject MainPanel;
     public GameObject LevelPanel;
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     public Text[] CashTxt;
     public static MenuManager instance;
     public int modenumber;
-    public int[] ModeLevels_T;
+   
     private void Start()
     {
         AudioListener.pause = false;
