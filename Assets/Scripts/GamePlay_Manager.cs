@@ -36,7 +36,7 @@ public class GamePlay_Manager : MonoBehaviour
     public Text FailTimeTxt, CompTimeTxt;
     public AudioSource nice_job;
     public RCC_Camera cam;
-    public GameObject[] StartPoint;
+  
     public GameObject player;
     public AudioSource SuddendlySounds;
     public AudioClip s1,s2,s3,s4,s5;
@@ -55,11 +55,11 @@ public class GamePlay_Manager : MonoBehaviour
         GamePlayPanel.SetActive(true);
 
         Levels[MenuManager.LevelNum].SetActive(true);
-        if (MenuManager.instance.modenumber == 3)
-        {
-            player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x, player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
-            player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
-        }
+        //if (MenuManager.instance.modenumber == 3)
+        //{
+        //    player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x, player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
+        //    player.transform.rotation = StartPoint[MenuManager.LevelNum].transform.rotation;
+        //}
         Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
         if (MenuManager.instance.modenumber == 3)
             Invoke(nameof(StartSound),1.5f);
