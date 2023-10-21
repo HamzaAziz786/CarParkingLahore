@@ -88,6 +88,19 @@ public class
 
     private void OnEnable()
     {
+        //for (int i = 0; i < levels.Length; i++)
+        //{
+        //    levels[i].SetActive(false);
+        //}
+        Debug.Log(MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber]);
+        for (int i = 0; i < MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber] ; i++)
+        {
+            if(i<= MenuManager.instance.modenumber)
+                levels[i].SetActive(true);
+            else
+                levels[i].SetActive(false);
+
+        }
         //nextBtn.interactable = false;
         foreach (GameObject obj in levels)
         {
@@ -101,6 +114,7 @@ public class
             lockedImg[i].SetActive(true);
         }
         //ContentPosition();
+
     }
 
 
