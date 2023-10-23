@@ -288,6 +288,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         BtnClickSound();
         HidePanels();
+
         loadingPanel.SetActive(true);
         StartCoroutine(NextPlz());
         //  AdsManager.Instance.HideRectBannerAd();
