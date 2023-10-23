@@ -81,6 +81,7 @@ public class MenuManager : MonoBehaviour
         HidePanels();
         LevelPanel.SetActive(true);
         AdsController.instance.ShowAd(AdType.BANNER, 0);
+
     }
     public void OnShopBtnClick()
     {
