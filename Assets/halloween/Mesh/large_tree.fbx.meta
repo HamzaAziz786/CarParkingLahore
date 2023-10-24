@@ -3,7 +3,17 @@ guid: 636add3db14bca146bea71c6b4dc3e7c
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree_body
+    second: {fileID: 2100000, guid: 47d4d617156b15440b7316dbb2dd5ddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree_mouth
+    second: {fileID: 2100000, guid: c560456bd2a50ad4ab756b5997115185, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -15,8 +25,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'Hips' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -35,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 8
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -81,7 +90,7 @@ ModelImporter:
     skeleton:
     - name: large_tree(Clone)
       parentName: 
-      position: {x: -1.1720636, y: 0.032534108, z: -0.053979676}
+      position: {x: -0.093765065, y: 0.0026027295, z: -0.004318373}
       rotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
       scale: {x: 0.34074605, y: 0.34074605, z: 0.34074605}
     armTwist: 0.5
@@ -91,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.08
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
