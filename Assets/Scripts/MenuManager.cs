@@ -27,7 +27,10 @@ public class MenuManager : MonoBehaviour
     public Text[] CashTxt;
     public static MenuManager instance;
     public int modenumber;
-   
+    public GameObject MainMenu_T;
+    public GameObject Mode_T;
+    public GameObject Level_T;
+
     private void Start()
     {
         AudioListener.pause = false;
@@ -40,11 +43,34 @@ public class MenuManager : MonoBehaviour
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         AdsController.instance.ShowAd(AdType.BANNER,0);
-       // AdsManager.Instance.ShowBannerAd();
-       // AdsManager.Instance.HideRectBannerAd();
+        // AdsManager.Instance.ShowBannerAd();
+        // AdsManager.Instance.HideRectBannerAd();
+        if (PlayerPrefs.GetInt("FirstTime") == 0)
+        {
+            MainMenu_T.SetActive(true);
+        }
+        else
+        {
+            MainMenu_T.SetActive(false);
+        }
     }
 
+    public void OnClickPLay()
+    {
+        if (PlayerPrefs.GetInt("FirstTime") == 0)
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(true);
+            
 
+        }
+        else
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(false);
+           
+        }
+    }
     public void HidePanels()
     {
         MainPanel.SetActive(false);
@@ -57,6 +83,19 @@ public class MenuManager : MonoBehaviour
 
     public void ModeNumber(int ModeNumber)
     {
+        if (PlayerPrefs.GetInt("FirstTime") == 0)
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(false);
+            Level_T.SetActive(true);
+
+        }
+        else
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(false);
+            Level_T.SetActive(false);
+        }
         modenumber = ModeNumber;
         switch (modenumber)
         {
@@ -220,6 +259,20 @@ public class MenuManager : MonoBehaviour
 
     public void SelectLevel(int num)
     {
+        if (PlayerPrefs.GetInt("FirstTime") == 0)
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(false);
+            Level_T.SetActive(true);
+            PlayerPrefs.SetInt("FirstTime", 1);
+
+        }
+        else
+        {
+            MainMenu_T.SetActive(false);
+            Mode_T.SetActive(false);
+            Level_T.SetActive(false);
+        }
         switch (modenumber)
         {
             case 2:
