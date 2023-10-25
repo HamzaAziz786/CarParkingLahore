@@ -65,6 +65,12 @@ public class Collision_Handler : MonoBehaviour
 
 
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Pumpkin")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 
 }
