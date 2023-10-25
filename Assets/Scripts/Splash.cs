@@ -14,7 +14,7 @@ public class Splash : MonoBehaviour
     private void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
+        Firebase_Analytics.Instance.LogEvent("Splash");
         if (PlayerPrefs.GetInt("Once") == 0)
         {
             PlayerPrefs.SetInt("control", 2);

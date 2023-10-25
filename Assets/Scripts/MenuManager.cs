@@ -35,8 +35,8 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
         instance = this;
 
+        Firebase_Analytics.Instance.LogEvent("MainMenu");
 
-       
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         AdsController.instance.ShowAd(AdType.BANNER,0);
@@ -58,6 +58,24 @@ public class MenuManager : MonoBehaviour
     public void ModeNumber(int ModeNumber)
     {
         modenumber = ModeNumber;
+        switch (modenumber)
+        {
+            case 2:
+                Firebase_Analytics.Instance.LogEvent("Simple_Mode");
+                break;
+            case 3:
+                Firebase_Analytics.Instance.LogEvent("Hallowean_Mode");
+                break;
+            case 4:
+                Firebase_Analytics.Instance.LogEvent("City_Mode");
+                break;
+            case 5:
+                Firebase_Analytics.Instance.LogEvent("Snow_Mode");
+                break;
+
+            default:
+                break;
+        }
         if (ModeNumber == 0)
         {
             BtnClickSound();
@@ -67,6 +85,24 @@ public class MenuManager : MonoBehaviour
         {
             BtnClickSound();
             
+        }
+        switch (modenumber)
+        {
+            case 2:
+                Firebase_Analytics.Instance.LogEvent("Simple_Mode");
+                break;
+            case 3:
+                Firebase_Analytics.Instance.LogEvent("Hallowean_Mode");
+                break;
+            case 4:
+                Firebase_Analytics.Instance.LogEvent("City_Mode");
+                break;
+            case 5:
+                Firebase_Analytics.Instance.LogEvent("Snow_Mode");
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -184,6 +220,24 @@ public class MenuManager : MonoBehaviour
 
     public void SelectLevel(int num)
     {
+        switch (modenumber)
+        {
+            case 2:
+                Firebase_Analytics.Instance.LogEvent("Simple_Mode "+"Level no "+ num);
+                break;
+            case 3:
+                Firebase_Analytics.Instance.LogEvent("Hallowean_Mode " + "Level no " + num);
+                break;
+            case 4:
+                Firebase_Analytics.Instance.LogEvent("City_Mode " + "Level no " + num);
+                break;
+            case 5:
+                Firebase_Analytics.Instance.LogEvent("Snow_Mode " + "Level no " + num);
+                break;
+
+            default:
+                break;
+        }
         BtnClickSound();
         LevelNum = num;
 

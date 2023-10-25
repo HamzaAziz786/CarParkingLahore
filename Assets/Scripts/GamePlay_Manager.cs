@@ -55,6 +55,7 @@ public class GamePlay_Manager : MonoBehaviour
         GamePlayPanel.SetActive(true);
 
         Levels[MenuManager.LevelNum].SetActive(true);
+        
         //if (MenuManager.instance.modenumber == 3)
         //{
         //    player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x, player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
@@ -103,6 +104,7 @@ public class GamePlay_Manager : MonoBehaviour
 
         num++;
         LevelNoTxt.text = "LEVEL " + num;
+        Firebase_Analytics.Instance.LogEvent("level_" + num + "_start");
         // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
         AdsController.instance.ShowAd(AdType.BANNER,0);
         // AdsManager.Instance.ShowBannerAd();
@@ -184,6 +186,7 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         FailPanel.SetActive(true);
         AudioListener.volume = 0;
+        Firebase_Analytics.Instance.LogEvent("level_" + num + "_failed");
         // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
         AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         //AdsManager.Instance.ShowInterstitialLoading();
@@ -206,7 +209,7 @@ public class GamePlay_Manager : MonoBehaviour
         {
             PlayerPrefs.SetInt("levels"+MenuManager.instance.modenumber, PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) + 1);
         }
-
+        Firebase_Analytics.Instance.LogEvent("level_" + num + "_complete");
         //FireBaseManager.Instance.LogEvent("level_" + num + "_complete");
     }
     public void OpenCompltPanel()
