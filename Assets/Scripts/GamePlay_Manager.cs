@@ -41,7 +41,9 @@ public class GamePlay_Manager : MonoBehaviour
     public AudioSource SuddendlySounds;
     public AudioClip s1,s2,s3,s4,s5;
     public Rigidbody playerrb;
-   
+    public int com_count=0;
+    public int fail_count=0;
+    public int pause_count=0;
     private void Start()
     {
         Instance = this;
@@ -188,7 +190,11 @@ public class GamePlay_Manager : MonoBehaviour
         AudioListener.volume = 0;
         Firebase_Analytics.Instance.LogEvent("level_" + num + "_failed");
         // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
-        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        fail_count++;
+        if (fail_count % 2 == 0)
+        {
+            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        }
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
@@ -216,7 +222,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
         CompletePanel.SetActive(true);
-        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+       
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
@@ -235,7 +241,8 @@ public class GamePlay_Manager : MonoBehaviour
         HidePanels();
         loadingPanel.SetActive(true);
         SceneManager.LoadScene("MainMenu");
-        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+
+        
         //AdsManager.Instance.HideRectBannerAd();
     }
     public void OnLevels()
@@ -254,7 +261,12 @@ public class GamePlay_Manager : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0;
         AudioListener.volume = 0;
-        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        pause_count++;
+        if ( pause_count % 3 == 0)
+        {
+            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        }
+       
         // AdsManager.Instance.ShowInterstitialLoading();
         // AdsManager.Instance.ShowRectBannerAd();
     }
@@ -291,7 +303,11 @@ public class GamePlay_Manager : MonoBehaviour
     {
         BtnClickSound();
         HidePanels();
-
+        com_count++;
+        if (com_count > 3  && com_count % 2 == 0)
+        {
+            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        }
         loadingPanel.SetActive(true);
         StartCoroutine(NextPlz());
         //  AdsManager.Instance.HideRectBannerAd();
