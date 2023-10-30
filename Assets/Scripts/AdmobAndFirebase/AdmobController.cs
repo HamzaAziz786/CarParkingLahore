@@ -21,7 +21,7 @@ public class AdmobController : MonoBehaviour
     [SerializeField] private string bannerID;
     [SerializeField] private string interstitialID;
     [SerializeField] private string interstitialID_Floor;
-    [SerializeField] private string rewardedID,AppOpenID;
+    [SerializeField] private string rewardedID;
 
     [Header("Banner Ads Settings")]
     [SerializeField] private BannerAdType banneryAdType = BannerAdType.Adaptive;

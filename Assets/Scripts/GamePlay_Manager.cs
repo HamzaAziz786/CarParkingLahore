@@ -36,19 +36,17 @@ public class GamePlay_Manager : MonoBehaviour
     public Text FailTimeTxt, CompTimeTxt;
     public AudioSource nice_job;
     public RCC_Camera cam;
-  
+
     public GameObject player;
     public AudioSource SuddendlySounds;
-    public AudioClip s1,s2,s3,s4,s5;
+    public AudioClip s1, s2, s3, s4, s5;
     public Rigidbody playerrb;
-    public int com_count=0;
-    public int fail_count=0;
-    public int pause_count=0;
+   
     private void Start()
     {
         Instance = this;
         Time.timeScale = 1;
-
+       
         RCC_Settings.Instance.behaviorSelectedIndex = 3;
 
         MainCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -57,7 +55,7 @@ public class GamePlay_Manager : MonoBehaviour
         GamePlayPanel.SetActive(true);
 
         Levels[MenuManager.LevelNum].SetActive(true);
-        
+
         //if (MenuManager.instance.modenumber == 3)
         //{
         //    player.transform.position = new Vector3(StartPoint[MenuManager.LevelNum].transform.position.x, player.transform.position.y, StartPoint[MenuManager.LevelNum].transform.position.z);
@@ -65,8 +63,8 @@ public class GamePlay_Manager : MonoBehaviour
         //}
         Players[PlayerPrefs.GetInt("currentPlayer")].SetActive(true);
         if (MenuManager.instance.modenumber == 3)
-            Invoke(nameof(StartSound),1.5f);
-            
+            Invoke(nameof(StartSound), 1.5f);
+
         //if(MenuManager.LevelNum == 0)
         //{
         //    //GearToturial.SetActive(false);
@@ -108,7 +106,7 @@ public class GamePlay_Manager : MonoBehaviour
         LevelNoTxt.text = "LEVEL " + num;
         Firebase_Analytics.Instance.LogEvent("level_" + num + "_start");
         // FireBaseManager.Instance.LogEvent("level_" + num + "_start");
-        AdsController.instance.ShowAd(AdType.BANNER,0);
+        AdsController.instance.ShowAd(AdType.BANNER, 0);
         // AdsManager.Instance.ShowBannerAd();
         //AdsManager.Instance.HideRectBannerAd();
     }
@@ -120,7 +118,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
 
         int a = Random.Range(0, 5);
-        if(a==0)
+        if (a == 0)
             SuddendlySounds.PlayOneShot(s1);
         else if (a == 1)
             SuddendlySounds.PlayOneShot(s2);
@@ -184,23 +182,28 @@ public class GamePlay_Manager : MonoBehaviour
 
     public void OnFail()
     {
+
+        PlayerPrefs.SetInt("fail", PlayerPrefs.GetInt("fail") + 1);
+        if (PlayerPrefs.GetInt("fail") > 3 && PlayerPrefs.GetInt("fail") % 3 == 0)
+        {
+            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+        }
+
+
         Time.timeScale = 0;
         HidePanels();
         FailPanel.SetActive(true);
         AudioListener.volume = 0;
         Firebase_Analytics.Instance.LogEvent("level_" + num + "_failed");
         // FireBaseManager.Instance.LogEvent("level_" + num + "_failed");
-        fail_count++;
-        if (fail_count % 2 == 0)
-        {
-            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
-        }
+
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
     public void OnComplete()
     {
         MainCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+
 
 
         HidePanels();
@@ -211,9 +214,9 @@ public class GamePlay_Manager : MonoBehaviour
         PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + 1000);
 
 
-        if (PlayerPrefs.GetInt("levels"+MenuManager.instance.modenumber) < 29 && MenuManager.LevelNum == PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber))
+        if (PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) < 29 && MenuManager.LevelNum == PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber))
         {
-            PlayerPrefs.SetInt("levels"+MenuManager.instance.modenumber, PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) + 1);
+            PlayerPrefs.SetInt("levels" + MenuManager.instance.modenumber, PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) + 1);
         }
         Firebase_Analytics.Instance.LogEvent("level_" + num + "_complete");
         //FireBaseManager.Instance.LogEvent("level_" + num + "_complete");
@@ -221,8 +224,12 @@ public class GamePlay_Manager : MonoBehaviour
     public void OpenCompltPanel()
     {
         HidePanels();
-        CompletePanel.SetActive(true);
+      
        
+        CompletePanel.SetActive(true);
+
+
+
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
@@ -242,7 +249,7 @@ public class GamePlay_Manager : MonoBehaviour
         loadingPanel.SetActive(true);
         SceneManager.LoadScene("MainMenu");
 
-        
+
         //AdsManager.Instance.HideRectBannerAd();
     }
     public void OnLevels()
@@ -261,12 +268,13 @@ public class GamePlay_Manager : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0;
         AudioListener.volume = 0;
-        pause_count++;
-        if ( pause_count % 3 == 0)
+        PlayerPrefs.SetInt("Pause", PlayerPrefs.GetInt("Pause") + 1);
+        if (PlayerPrefs.GetInt("Pause") > 2 && PlayerPrefs.GetInt("Pause") % 3 == 0)
         {
             AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         }
-       
+
+
         // AdsManager.Instance.ShowInterstitialLoading();
         // AdsManager.Instance.ShowRectBannerAd();
     }
@@ -303,8 +311,8 @@ public class GamePlay_Manager : MonoBehaviour
     {
         BtnClickSound();
         HidePanels();
-        com_count++;
-        if (com_count > 3  && com_count % 2 == 0)
+        PlayerPrefs.SetInt("com", PlayerPrefs.GetInt("com") + 1);
+        if(PlayerPrefs.GetInt("com")>3 && PlayerPrefs.GetInt("com") % 2 == 0)
         {
             AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
         }
@@ -314,7 +322,8 @@ public class GamePlay_Manager : MonoBehaviour
     }
     IEnumerator NextPlz()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSeconds(2f);
+
         if (MenuManager.LevelNum < 29)
         {
             MenuManager.LevelNum++;
