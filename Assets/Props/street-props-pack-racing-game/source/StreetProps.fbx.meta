@@ -3,7 +3,97 @@ guid: 86e55a1e2d61da14fbe7414897460ce3
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnimBoost01Mat
+    second: {fileID: 2100000, guid: df2eb8b41f3e5b44da2296e435b63f5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnimBoost02Mat
+    second: {fileID: 2100000, guid: c5be494bf1b8397428774da697e4ac49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnimBoost03Mat
+    second: {fileID: 2100000, guid: c96b8a4529b7de04db47252e7192ac60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BarrierMat
+    second: {fileID: 2100000, guid: 159b4f2857aca3c4f9723104a9004bf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrickMat
+    second: {fileID: 2100000, guid: 38b5de79cb993074fbdea42d886ca877, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CautionConeLargeMat
+    second: {fileID: 2100000, guid: 6f359f2cb0ccb664597cd5081400529b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CautionConeSmallMat
+    second: {fileID: 2100000, guid: 25c02da63ad8046428ab60cf06aa3a0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CinderBlockMat
+    second: {fileID: 2100000, guid: 6ae9cf606c7e4a743a49135ce8222a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CinderSquareMat
+    second: {fileID: 2100000, guid: 00a900aac7d3df8499ae445197db0211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CylinderBarrierMat
+    second: {fileID: 2100000, guid: d6a33ef3ffbfbaa489631e30e2c0ed63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ManholeMat
+    second: {fileID: 2100000, guid: 483fd4ad0f8585947b39b269c04b1c15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpeedBoosterVar01Mat
+    second: {fileID: 2100000, guid: 4e1b7a9e0d13078418c2aa6282a04e12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpeedBoosterVar02Mat
+    second: {fileID: 2100000, guid: 70d923179ac410a4084ca57350f40389, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpeedBoosterVar03Mat
+    second: {fileID: 2100000, guid: a531d3b49d76d624b8b0020a92b09d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TyreBlueMat
+    second: {fileID: 2100000, guid: aaf2b00f378e83b43933a0e4b746df51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TyreGreenMat
+    second: {fileID: 2100000, guid: e45584bfd7b93f94788924c818d2d6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TyreMat
+    second: {fileID: 2100000, guid: d73a75b4a68285d4c88425f91cee7d0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TyreRedMat
+    second: {fileID: 2100000, guid: 444c9afc21797484c8e760386721ee87, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

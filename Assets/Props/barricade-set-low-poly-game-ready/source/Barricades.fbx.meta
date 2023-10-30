@@ -3,7 +3,17 @@ guid: 80a6019cfa011144bbfa45b954d5ee93
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 307fdd32d4b4bde4e974938728eb7d4a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Barricade_distressed_T
+    second: {fileID: 2800000, guid: 48bda3494b27b3242a4aec0f4ec3f744, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
