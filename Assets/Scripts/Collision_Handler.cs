@@ -7,6 +7,9 @@ public class Collision_Handler : MonoBehaviour
     public Rigidbody player;
     Material OriginalMat;
     Renderer render;
+    public ParticleSystem pumpkin;
+    public AudioSource pumpkin_sound;
+    
     private void Start()
     {
         player.isKinematic = false;
@@ -69,8 +72,15 @@ public class Collision_Handler : MonoBehaviour
     {
         if(other.gameObject.tag=="Pumpkin")
         {
+            pumpkin_sound.Play();
+            pumpkin.Play();
+
+
+            pumpkin.transform.position = other.gameObject.transform.position;
+          
             Destroy(other.gameObject);
+            
         }
     }
-
+   
 }

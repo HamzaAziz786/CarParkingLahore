@@ -9,7 +9,7 @@ public class
     public GameObject[] lockedImg;
   
     public static LevelsPanel instance;
-   
+    public GameObject content;
     void Start()
     {
        
@@ -20,7 +20,7 @@ public class
    
     private void OnEnable()
     {
-        
+        content.transform.position = new Vector3(0, 0, 0);
         Debug.Log(MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber]);
         foreach (var item in levels)
         {

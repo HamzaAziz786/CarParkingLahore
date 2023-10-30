@@ -8903,7 +8903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab095acd2d0d4317b11166fd5afc50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModeLevels_T: 000000000000000037000000370000000a0000001e000000
+  ModeLevels_T: 000000000000000037000000370000001e0000001e000000
   MainPanel: {fileID: 1022653533825128233}
   LevelPanel: {fileID: 1022653534660978366}
   SettingsPanel: {fileID: 1022653534647672527}
@@ -9540,7 +9540,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 610934805}
   m_OnClick:
     m_PersistentCalls:
@@ -14079,7 +14079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &933078270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15467,6 +15467,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1022653533825128233}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1002364430
 MonoBehaviour:
@@ -18800,7 +18812,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193273688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -25393,10 +25405,10 @@ RectTransform:
   m_Father: {fileID: 22709855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421.7, y: -32.003906}
-  m_SizeDelta: {x: 173, y: 178}
+  m_AnchorMin: {x: 0.10296874, y: 0.331939}
+  m_AnchorMax: {x: 0.238125, y: 0.5791612}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577632592
 MonoBehaviour:
@@ -39227,6 +39239,7 @@ MonoBehaviour:
   - {fileID: 865405551}
   - {fileID: 686026112}
   - {fileID: 2133539827}
+  content: {fileID: 1300137553}
 --- !u!95 &1022653534660978369
 Animator:
   serializedVersion: 5
