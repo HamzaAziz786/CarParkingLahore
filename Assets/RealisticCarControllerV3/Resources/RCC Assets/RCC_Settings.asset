@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
   controllerSelectedIndex: 1
-  behaviorSelectedIndex: 3
+  behaviorSelectedIndex: 0
   overrideBehavior: 1
   overrideFPS: 1
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
-  maxAngularVelocity: 8
+  maxAngularVelocity: 0.5
   maxFPS: 60
   useFixedWheelColliders: 1
   lockAndUnlockCursor: 0
