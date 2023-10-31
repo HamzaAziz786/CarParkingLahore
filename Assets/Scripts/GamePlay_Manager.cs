@@ -214,7 +214,7 @@ public class GamePlay_Manager : MonoBehaviour
         PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + 1000);
 
 
-        if (PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) < 29 && MenuManager.LevelNum == PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber))
+        if (PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) < MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber] && MenuManager.LevelNum == PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber))
         {
             PlayerPrefs.SetInt("levels" + MenuManager.instance.modenumber, PlayerPrefs.GetInt("levels" + MenuManager.instance.modenumber) + 1);
         }
@@ -269,10 +269,8 @@ public class GamePlay_Manager : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.volume = 0;
         PlayerPrefs.SetInt("Pause", PlayerPrefs.GetInt("Pause") + 1);
-        if (PlayerPrefs.GetInt("Pause") > 2 && PlayerPrefs.GetInt("Pause") % 3 == 0)
-        {
-            AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
-        }
+        AdsController.instance.ShowAd(AdNetwork.ADMOB, AdType.INTERSTITIAL);
+       
 
 
         // AdsManager.Instance.ShowInterstitialLoading();
@@ -324,18 +322,23 @@ public class GamePlay_Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        if (MenuManager.LevelNum < 29)
+        Debug.Log("Level Number" + MenuManager.LevelNum);
+        Debug.Log("Total Levels" + MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber]);
+        if (MenuManager.LevelNum < MenuManager.instance.ModeLevels_T[MenuManager.instance.modenumber])
         {
             MenuManager.LevelNum++;
-
+            Restart();
         }
         else
         {
-            MenuManager.LevelNum = 0;
+            /*MenuManager.LevelNum = 0;*/
             //MenuManager.IsNext = true;
-
+            HidePanels();
+            loadingPanel.SetActive(true);
+            PlayerPrefs.SetInt("Icoom", PlayerPrefs.GetInt("Icoom", 1));
+            SceneManager.LoadScene("MainMenu");
         }
-        Restart();
+      
     }
 
 }

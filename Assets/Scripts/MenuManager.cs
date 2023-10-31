@@ -30,14 +30,21 @@ public class MenuManager : MonoBehaviour
     public GameObject MainMenu_T;
     public GameObject Mode_T;
     public GameObject Level_T;
-
+    public GameObject Mode_Selection;
+   
     private void Start()
     {
         AudioListener.pause = false;
 
         Time.timeScale = 1;
-        instance = this;
 
+        instance = this;
+        if (PlayerPrefs.GetInt("Icoom")==1)
+        {
+            Mode_Selection.SetActive(true);
+            MainPanel.SetActive(false);
+            PlayerPrefs.SetInt("Icoom", PlayerPrefs.GetInt("Icoom", 0));
+        }
         Firebase_Analytics.Instance.LogEvent("MainMenu");
 
 
@@ -157,6 +164,12 @@ public class MenuManager : MonoBehaviour
         LevelPanel.SetActive(true);
         AdsController.instance.ShowAd(AdType.BANNER, 0);
 
+    }
+    public void ModePlayButtonClick()
+    {
+        BtnClickSound();
+        HidePanels();
+        LevelPanel.SetActive(true);
     }
     public void OnShopBtnClick()
     {
