@@ -282,9 +282,9 @@ MonoBehaviour:
   uiType: 0
   useTelemetry: 0
   mobileController: 2
-  UIButtonSensitivity: 2
-  UIButtonGravity: 2
-  gyroSensitivity: 2
+  UIButtonSensitivity: 100
+  UIButtonGravity: 100
+  gyroSensitivity: 100
   useLightsAsVertexLights: 1
   useLightProjectorForLightingEffect: 0
   setTagsAndLayers: 0
