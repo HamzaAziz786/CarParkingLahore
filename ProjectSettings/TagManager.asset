@@ -21,7 +21,6 @@ TagManager:
   - Exit
   - indicatorleft
   - indicatorright
-  - Pumpkin
   layers:
   - Default
   - TransparentFX
@@ -32,8 +31,8 @@ TagManager:
   - Player
   - Traffic
   - Levels
-  - Glow
-  - Trees
+  - 
+  - 
   - 
   - 
   - 

@@ -43,6 +43,7 @@ public class GamePlay_Manager : MonoBehaviour
     public Rigidbody playerrb;
     public AudioSource StarsSound;
     public AudioClip[] stars_clips;
+    public GameObject[] stars;
 
     private void Start()
     {
@@ -227,23 +228,35 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
 
-        StartCoroutine(nameof(stars_sound));
+        
         CompletePanel.SetActive(true);
 
-
+        StartCoroutine(nameof(stars_sound));
 
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
     }
+    public void stars_sound_fun()
+    {
+        StartCoroutine(nameof(stars_sound));
+    }
     IEnumerator stars_sound()
     {
 
-        yield return new WaitForSeconds(.6f);
-        StarsSound.PlayOneShot(stars_clips[0]);
-        yield return new WaitForSeconds(.7f);
-        StarsSound.PlayOneShot(stars_clips[1]);
-        yield return new WaitForSeconds(.8f);
-        StarsSound.PlayOneShot(stars_clips[2]);
+        yield return new WaitForSeconds(.2f);
+        stars[0].SetActive(true);
+        StarsSound.clip = stars_clips[0];
+        StarsSound.Play();
+       
+
+        yield return new WaitForSeconds(.3f);
+        stars[1].SetActive(true);
+        StarsSound.clip = stars_clips[1];
+        StarsSound.Play();
+        yield return new WaitForSeconds(.4f);
+        stars[2].SetActive(true);
+        StarsSound.clip = stars_clips[2];
+        StarsSound.Play();
     }
     public void Restart()
     {
