@@ -41,7 +41,9 @@ public class GamePlay_Manager : MonoBehaviour
     public AudioSource SuddendlySounds;
     public AudioClip s1, s2, s3, s4, s5;
     public Rigidbody playerrb;
-   
+    public AudioSource StarsSound;
+    public AudioClip[] stars_clips;
+
     private void Start()
     {
         Instance = this;
@@ -224,14 +226,24 @@ public class GamePlay_Manager : MonoBehaviour
     public void OpenCompltPanel()
     {
         HidePanels();
-      
-       
+
+        StartCoroutine(nameof(stars_sound));
         CompletePanel.SetActive(true);
 
 
 
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
+    }
+    IEnumerator stars_sound()
+    {
+
+        yield return new WaitForSeconds(.6f);
+        StarsSound.PlayOneShot(stars_clips[0]);
+        yield return new WaitForSeconds(.7f);
+        StarsSound.PlayOneShot(stars_clips[1]);
+        yield return new WaitForSeconds(.8f);
+        StarsSound.PlayOneShot(stars_clips[2]);
     }
     public void Restart()
     {
