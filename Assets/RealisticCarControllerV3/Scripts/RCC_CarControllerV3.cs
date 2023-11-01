@@ -2374,8 +2374,8 @@ public class RCC_CarControllerV3 : RCC_Core {
 	}
     public void MyBrake()
     {
-		if (SceneManager.GetActiveScene().name == "GamePlay")
-		{
+		//if (SceneManager.GetActiveScene().name == "GamePlay")
+		//{
 			if (throttleInput == 0)
 			{
 				rigid.drag = 1f;
@@ -2384,13 +2384,13 @@ public class RCC_CarControllerV3 : RCC_Core {
 			{
 				rigid.drag = 0;
 			}
-		}
-		else
-        {
-			//if (brakeInput == 0)
-			//	rigid.drag = 0;
-			//else
-			//	rigid.drag = 1f;
-        }
+		//}
+		//else
+  //      {
+		//	if (brakeInput == 0)
+		//		rigid.drag = 0;
+		//	else
+		//		rigid.drag = 1f;
+		//}
     }
 } 
