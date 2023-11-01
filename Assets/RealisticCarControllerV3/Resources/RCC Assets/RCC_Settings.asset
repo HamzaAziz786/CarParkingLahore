@@ -18,7 +18,7 @@ MonoBehaviour:
   overrideFPS: 1
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
-  maxAngularVelocity: 0.5
+  maxAngularVelocity: 8
   maxFPS: 60
   useFixedWheelColliders: 1
   lockAndUnlockCursor: 0
@@ -282,9 +282,9 @@ MonoBehaviour:
   uiType: 0
   useTelemetry: 0
   mobileController: 2
-  UIButtonSensitivity: 100
-  UIButtonGravity: 100
-  gyroSensitivity: 100
+  UIButtonSensitivity: 2
+  UIButtonGravity: 2
+  gyroSensitivity: 2
   useLightsAsVertexLights: 1
   useLightProjectorForLightingEffect: 0
   setTagsAndLayers: 0
