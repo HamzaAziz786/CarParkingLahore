@@ -44,7 +44,7 @@ public class GamePlay_Manager : MonoBehaviour
     public AudioSource StarsSound;
     public AudioClip[] stars_clips;
     public GameObject[] stars;
-
+    public GameObject comp_tagline;
     private void Start()
     {
         Instance = this;
@@ -215,6 +215,7 @@ public class GamePlay_Manager : MonoBehaviour
         StarsSound.clip = stars_clips[3];
         StarsSound.Play();
         playerrb.isKinematic = true;
+        comp_tagline.SetActive(true);
         Invoke("OpenCompltPanel", 2f);
 
         PlayerPrefs.SetInt("cash", PlayerPrefs.GetInt("cash") + 1000);
@@ -231,7 +232,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
 
-       
+        comp_tagline.SetActive(false);
         CompletePanel.SetActive(true);
 
         //StartCoroutine(nameof(stars_sound));
