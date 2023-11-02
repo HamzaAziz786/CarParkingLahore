@@ -272,6 +272,8 @@ public class GamePlay_Manager : MonoBehaviour
         BtnClickSound();
         HidePanels();
         loadingPanel.SetActive(true);
+        Time.timeScale = 1;
+        AudioListener.volume = 1;
         SceneManager.LoadScene("MainMenu");
 
 

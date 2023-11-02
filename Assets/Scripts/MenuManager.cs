@@ -31,7 +31,8 @@ public class MenuManager : MonoBehaviour
     public GameObject Mode_T;
     public GameObject Level_T;
     public GameObject Mode_Selection;
-   
+    public GameObject[] SelectorImag;
+    public int current_mode;
     private void Start()
     {
         AudioListener.pause = false;
@@ -39,6 +40,11 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
 
         instance = this;
+        for (int i = 0; i < SelectorImag.Length; i++)
+        {
+            SelectorImag[i].SetActive(false);
+        }
+        SelectorImag[current_mode].SetActive(true);
         if (PlayerPrefs.GetInt("Icoom")==1)
         {
             Mode_Selection.SetActive(true);
@@ -347,7 +353,15 @@ public class MenuManager : MonoBehaviour
             yield return null;
         }
     }
-
+    public void Selector_Mode(int CurrentNumber)
+    {
+        current_mode = CurrentNumber;
+        for (int i = 0; i < SelectorImag.Length; i++)
+        {
+            SelectorImag[i].SetActive(false);
+        }
+        SelectorImag[CurrentNumber].SetActive(true);
+    }
     private void Update()
     {
 

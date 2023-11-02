@@ -8,6 +8,7 @@ public class Collision_Handler : MonoBehaviour
     Material OriginalMat;
     Renderer render;
     public ParticleSystem pumpkin;
+    public ParticleSystem pumpkin1;
     public AudioSource pumpkin_sound;
     
     private void Start()
@@ -74,9 +75,11 @@ public class Collision_Handler : MonoBehaviour
         {
             pumpkin_sound.Play();
             pumpkin.Play();
+            pumpkin1.Play();
 
 
             pumpkin.transform.position = other.gameObject.transform.position;
+            pumpkin1.transform.position = other.gameObject.transform.position;
           
             Destroy(other.gameObject);
             
