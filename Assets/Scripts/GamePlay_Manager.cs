@@ -208,9 +208,12 @@ public class GamePlay_Manager : MonoBehaviour
         MainCanvas.renderMode = RenderMode.ScreenSpaceCamera;
 
 
-
+       
         HidePanels();
         nice_job.Play();
+        SuddendlySounds.mute = true;
+        StarsSound.clip = stars_clips[3];
+        StarsSound.Play();
         playerrb.isKinematic = true;
         Invoke("OpenCompltPanel", 2f);
 
@@ -228,8 +231,7 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
 
-        SuddendlySounds.Stop();
-
+       
         CompletePanel.SetActive(true);
 
         StartCoroutine(nameof(stars_sound));
@@ -243,8 +245,7 @@ public class GamePlay_Manager : MonoBehaviour
     }
     IEnumerator stars_sound()
     {
-        StarsSound.clip = stars_clips[3];
-        StarsSound.Play();
+        
         yield return new WaitForSeconds(.4f);
         stars[0].SetActive(true);
         StarsSound.clip = stars_clips[0];
