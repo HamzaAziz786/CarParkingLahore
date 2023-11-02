@@ -228,7 +228,8 @@ public class GamePlay_Manager : MonoBehaviour
     {
         HidePanels();
 
-        
+        SuddendlySounds.Stop();
+
         CompletePanel.SetActive(true);
 
         StartCoroutine(nameof(stars_sound));
