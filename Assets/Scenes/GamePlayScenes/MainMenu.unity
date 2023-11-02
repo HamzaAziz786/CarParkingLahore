@@ -8903,7 +8903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab095acd2d0d4317b11166fd5afc50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModeLevels_T: 000000000000000032000000290000001d0000001d000000
+  ModeLevels_T: 000000000000000032000000320000003200000032000000
   MainPanel: {fileID: 1022653533825128233}
   LevelPanel: {fileID: 1022653534660978366}
   SettingsPanel: {fileID: 1022653534647672527}
@@ -21025,7 +21025,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2295.59}
+  m_SizeDelta: {x: 0, y: 2241.552}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1307166347
 GameObject:
@@ -26582,7 +26582,7 @@ RectTransform:
   m_Father: {fileID: 967552469}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7994063}
+  m_AnchorMin: {x: 0, y: 0.79457045}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -31467,7 +31467,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1672429144}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.20059374
+  m_Size: 0.20542954
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
