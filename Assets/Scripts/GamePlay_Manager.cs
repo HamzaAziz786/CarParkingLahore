@@ -234,7 +234,7 @@ public class GamePlay_Manager : MonoBehaviour
        
         CompletePanel.SetActive(true);
 
-        StartCoroutine(nameof(stars_sound));
+        //StartCoroutine(nameof(stars_sound));
 
         //AdsManager.Instance.ShowInterstitialLoading();
         //AdsManager.Instance.ShowRectBannerAd();
