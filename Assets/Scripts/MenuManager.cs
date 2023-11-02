@@ -154,7 +154,7 @@ public class MenuManager : MonoBehaviour
 
     public void BtnClickSound()
     {
-        if (PlayerPrefs.GetInt("sound") == 0)
+        //if (PlayerPrefs.GetInt("sound") == 0)
             BtnClickSource.PlayOneShot(BtnClip);
     }
     public void OnPlayBtnClick()
