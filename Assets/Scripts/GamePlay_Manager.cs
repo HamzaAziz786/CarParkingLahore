@@ -246,19 +246,19 @@ public class GamePlay_Manager : MonoBehaviour
     IEnumerator stars_sound()
     {
         
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.2f);
         stars[0].SetActive(true);
         StarsSound.clip = stars_clips[0];
         StarsSound.Play();
        
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         stars[1].SetActive(true);
-        StarsSound.clip = stars_clips[1];
+        StarsSound.clip = stars_clips[0];
         StarsSound.Play();
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.4f);
         stars[2].SetActive(true);
-        StarsSound.clip = stars_clips[2];
+        StarsSound.clip = stars_clips[0];
         StarsSound.Play();
     }
     public void Restart()
