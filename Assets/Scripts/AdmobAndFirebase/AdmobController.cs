@@ -226,11 +226,7 @@ public class AdmobController : MonoBehaviour
                 interstitialAd_Floor.Show();
                 return true;
             }
-            else
-            {
-                AdsController.instance.ShowUnityVideoAd();
-                return false;
-            }
+            
             
         }
             AdsController.instance.RewardedAdResult(AdResult.SUCCSSEFUL);

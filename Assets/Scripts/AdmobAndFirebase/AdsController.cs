@@ -39,14 +39,7 @@ public class AdsController : MonoBehaviour
     public bool isAdInitialized = false;
     //Unity ADs
     [Space(15)]
-    [Header("Unity Ids")]
-    [SerializeField]
-    public string unityAdsID;
-    [SerializeField] private string interstitialPlacementID;
-    [SerializeField] private string URV_PlacementID;
-    [HideInInspector] public int CountP = 0, CountM = 1, CountInter = 0;
-    public delegate void IAPSuccess();
-    public IAPSuccess FunRetCal;
+
     public GameObject LoadingPanel;
     #endregion
     #region Unity Functions And Loading Sequence
@@ -63,8 +56,8 @@ public class AdsController : MonoBehaviour
             PlayerPrefs.SetInt("newUser", 0);
             PlayerPrefs.GetInt("GameLoad", 0);
         }
-        CountM = 1;
-       // Application.targetFrameRate = 60;
+       
+        Application.targetFrameRate = 60;
     }
 
     IEnumerator Start()
@@ -82,20 +75,10 @@ public class AdsController : MonoBehaviour
             yield return new WaitForSeconds(2f);
             if (!isProUser)
             {
-               // admobController.LoadAd_AppOpen();
+               
                 admobController.RequestBannerAd();
                 admobController.RequestInterstitialAd_Floor();
-                //if (PlayerPrefs.GetInt("GameLoad") == 0)
-                //{
-                //    loadSceen();
-                //    PlayerPrefs.SetInt("GameLoad", 1);
-                //}
-                //else
-                //{
-                //    Invoke(nameof(loadSceen), 15f);
-                //    //Invoke(nameof(AppopenLoad), 9f);
-                //    PlayerPrefs.SetInt("GameLoad", 0);
-                //}
+                
             }
             admobController.RequestRewardedAd();
         }
@@ -103,31 +86,12 @@ public class AdsController : MonoBehaviour
         {
             isAdInitialized = false;
           yield return new WaitForSeconds(1f);
-            //loadSceen();
+           
         }
     }
-    //void AppopenLoad()
-    //{
-    //    if(admobController.AppOpen_Ad == null)
-    //        admobController.LoadAd_AppOpen();
-    //}
+  
   public  bool onceAppOpen = false;
-  //public void loadSceen()
-  //{
-  //      if (!onceAppOpen)
-  //      {
-  //          StartCoroutine(WaitLoding());
-  //          onceAppOpen = true;
-  //      }
-  //}
-  //  IEnumerator WaitLoding()
-  //  {
-  //      //if (PlayerPrefs.GetInt("GameLoad") != 1)
-  //      //    admobController.ShowAd_AppOpen();
-  //      yield return new WaitForSeconds(3f);
-  //        SceneManager.LoadScene("Menu");
-  //  }
-
+  
    
     public bool IsInternetConnection
     {
@@ -161,7 +125,7 @@ public class AdsController : MonoBehaviour
   
     #endregion
     //---------------------------------------------- Unity Functions And Loading Sequence -----------------------------------------------------------------//
-     public bool UnityAdLoaded = false , UnityInter = false;
+   
     public void DoAdsInitialization()
     {
         try
@@ -175,26 +139,8 @@ public class AdsController : MonoBehaviour
     {
        
     }
-    public bool ShowUnityVideoAd()
-    {
-        try
-        {
-            if (UnityInter)
-            {
-                RewardedAdResult(AdResult.SUCCSSEFUL);
-               
-            }
-            else
-                RewardedAdResult(AdResult.SUCCSSEFUL);
-            return true;
-        }
-        catch { return false; }
-    }
-    public bool ShowUnityRewarded()
-    {
-        
-        return true;
-    }
+   
+    
     //---------------------------------------------- Showing Ad -------------------------------------------------------------------------------------------//
     #region Showing Ad
 
@@ -208,9 +154,7 @@ public class AdsController : MonoBehaviour
                 {
                     case AdNetwork.ADMOB:
                         return AdmobShowAd(adType);
-                    case AdNetwork.UNITY:
-                       // return AdmobShowAd(adType);
-                        return UnityShowAd(adType);
+                   
                     default:
                         return false;
                 }
@@ -227,9 +171,7 @@ public class AdsController : MonoBehaviour
             {
                 case AdNetwork.ADMOB:
                     return AdmobShowAd(adType);
-                case AdNetwork.UNITY:
-                   // return AdmobShowAd(adType);
-                    return UnityShowAd(adType);
+               
                 default:
                     return false;
             }
@@ -273,23 +215,7 @@ public class AdsController : MonoBehaviour
                 return false;
         }
     }
-    private bool UnityShowAd(AdType adType)
-    {
-        switch (adType)
-        {
-            case AdType.INTERSTITIAL:
-                if (isProUser)
-                    return false;
-
-                return ShowUnityVideoAd();
-
-            case AdType.REWARDED:
-                return ShowUnityRewarded();
-            default:
-                return false;
-        }
-    }
-
+   
     public void RegisterProUser()
     {
         PlayerPrefs.SetInt("remove_ads", 1);
@@ -326,25 +252,9 @@ public class AdsController : MonoBehaviour
     #endregion
     //---------------------------------------------- Unity Events -----------------------------------------------------------------------------------------------//
 
-    public void OnInitializationComplete()
-    {
-        LoadAd(interstitialPlacementID);
-        LoadAd(URV_PlacementID);
-    }
    
 
-    public void OnUnityAdsAdLoaded(string placementId)
-    {
-        if (placementId == interstitialPlacementID)
-        {
-            UnityInter = true;
-        }
-        if (placementId == URV_PlacementID)
-        {
-            UnityAdLoaded = true;
-        }
-        //throw new System.NotImplementedException();
-    }
+  
    
 
    
